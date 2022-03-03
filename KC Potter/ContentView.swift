@@ -8,32 +8,56 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var move1 = false
-    @State var move2 = false
-    @State var move3 = false
+    @State var login = false
+    @State var calendar = false
+    @State var questions = false
+    @State var map = false
     var body : some View {
         return Group {
-            if move1 {
-                secondPage(move1: $move1)
-            } else if move2 {
-                thirdPage(move2: $move2)
-            } else if move3{
-                fourthPage(move3: $move3)
+            if !login {
+                logIn(login: $login)
+            }
+            else if calendar {
+                calendarPage(calendar: $calendar)
+            } else if questions {
+                questionsPage(questions: $questions)
+            } else if map{
+                mapPage(map: $map)
             }
             else {
-                homePage(move1: $move1, move2: $move2, move3: $move3)
+                homePage(login: $login, calendar: $calendar, questions: $questions, map: $map)
             }
         }
     }
 }
 
+struct logIn : View {
+    @Binding var login: Bool
+    var body: some View {
+        VStack (){
+            Button(action: {
+                self.login = true
+            }) {
+                Text("LOGIN")
+                    .fontWeight(.semibold)
+                    .font(.title)
+                    .foregroundColor(Color.black)
+                    .frame(minWidth: 0, maxWidth: 380, maxHeight: 100)
+                .background(Color.yellow)
+                .cornerRadius(40)
+            }
+        
+        }
+    }
+}
 
 
 struct homePage : View {
     
-    @Binding var move1: Bool
-    @Binding var move2: Bool
-    @Binding var move3: Bool
+    @Binding var login: Bool
+    @Binding var calendar: Bool
+    @Binding var questions: Bool
+    @Binding var map: Bool
     
     var body: some View {
         VStack (){
@@ -54,7 +78,7 @@ struct homePage : View {
                         .frame(minWidth: 0, maxWidth: 380, maxHeight: 250)
             
             Button(action: {
-                self.move1 = true
+                self.calendar = true
             }) {
                 Text("Get Connected")
                     .fontWeight(.semibold)
@@ -67,7 +91,7 @@ struct homePage : View {
             .padding(.top, 50.0)
             
             Button(action: {
-                self.move2 = true
+                self.questions = true
             }) {
                 Text("Get Involved")
                     .fontWeight(.semibold)
@@ -79,7 +103,7 @@ struct homePage : View {
             }
             
             Button(action: {
-                self.move3 = true
+                self.map = true
             }) {
                 Text("Find a Gender Neutral Bathroom")
                     .fontWeight(.semibold)
@@ -89,6 +113,18 @@ struct homePage : View {
                 .background(Color.yellow)
                 .cornerRadius(40)
             }
+            Button(action: {
+                self.login = false
+            }) {
+                Text("Log Out")
+                    .fontWeight(.semibold)
+                    .font(.title)
+                    .foregroundColor(Color.black)
+                    .frame(minWidth: 0, maxWidth: 380, maxHeight: 100)
+                .background(Color.yellow)
+                .cornerRadius(40)
+            }
+            
             
             
         
@@ -96,14 +132,14 @@ struct homePage : View {
     }
 }
 
-struct secondPage : View {
-    @Binding var move1: Bool
+struct calendarPage : View {
+    @Binding var calendar: Bool
     var body: some View {
         VStack (){
             Button(action: {
-                self.move1 = false
+                self.calendar = false
             }) {
-                Text("Second Page")
+                Text("Calendar Page")
                     .fontWeight(.semibold)
                     .font(.title)
                     .foregroundColor(Color.black)
@@ -115,14 +151,14 @@ struct secondPage : View {
     }
 }
 
-struct thirdPage : View {
-    @Binding var move2: Bool
+struct questionsPage : View {
+    @Binding var questions: Bool
     var body: some View {
         VStack (){
             Button(action: {
-                self.move2 = false
+                self.questions = false
             }) {
-                Text("Third Page")
+                Text("Questions Page")
                     .fontWeight(.semibold)
                     .font(.title)
                     .foregroundColor(Color.black)
@@ -135,14 +171,14 @@ struct thirdPage : View {
     }
 }
 
-struct fourthPage : View {
-    @Binding var move3: Bool
+struct mapPage : View {
+    @Binding var map: Bool
     var body: some View {
         VStack (){
             Button(action: {
-                self.move3 = false
+                self.map = false
             }) {
-                Text("Fourth Page")
+                Text("Map Page")
                     .fontWeight(.semibold)
                     .font(.title)
                     .foregroundColor(Color.black)
