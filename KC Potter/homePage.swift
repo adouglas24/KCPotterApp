@@ -35,7 +35,7 @@ struct homePage : View {
             Button(action: {
                 self.calendar = true
             }) {
-                Text("Get Connected")
+                Text("Calendar of Events")
                     .fontWeight(.semibold)
                     .font(.title)
                     .foregroundColor(Color.black)
@@ -48,7 +48,7 @@ struct homePage : View {
             Button(action: {
                 self.questions = true
             }) {
-                Text("Get Involved")
+                Text("Get Assistance")
                     .fontWeight(.semibold)
                     .font(.title)
                     .foregroundColor(Color.black)
