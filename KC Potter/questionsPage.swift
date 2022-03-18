@@ -3,48 +3,37 @@
 //  KC Potter
 //
 //  Created by Alexander Douglas on 3/3/22.
-//
+//  Modified by Zifeng Liang on 3/18/22.
 
 import SwiftUI
 
 struct questionsPage : View {
 
-    @State var value = ""
+    @State var affVal = ""
+    @State var idVal = ""
+    @State var resVal = ""
     var affiliation = "I am a ..."
     var affiliationList = ["Alumni", "Faculty", "Staff", "Student", "Sommunity"]
     var identity = "I identify as ..."
     var identityList = ["Lesbian/Gay", "Bi/Pan/Fluid", "Trans*", "Ally", "Intersex", "Ace/Aro"]
-    var type = "I am looking for ..."
-    var typeList = ["Athletics", "Counseling", "Educational", "Medical/Health", "Religious/Spiritual"]
+    var resource = "I am looking for ..."
+    var resourceList = ["Athletics", "Counseling", "Educational", "Medical/Health", "Religious/Spiritual"]
     
     @Binding var questions: Bool
     var body: some View {
-        VStack (){
-            Button(action: {
-                self.questions = false
-            }) {
-                Text("Questions Page")
-                    .fontWeight(.semibold)
-                    .font(.title)
-                    .foregroundColor(Color.black)
-                    .frame(minWidth: 0, maxWidth: 380, maxHeight: 100)
-                .background(Color.yellow)
-                .cornerRadius(40)
-            }
-        
-        }
+
         
         Menu {
             ForEach(affiliationList, id: \.self){ client in
                 Button(client) {
-                    self.value = client
+                    self.affVal = client
                 }
             }
         } label: {
             VStack(spacing: 5){
                 HStack{
-                    Text(value.isEmpty ? affiliation : value)
-                        .foregroundColor(value.isEmpty ? .gray : .black)
+                    Text(affVal.isEmpty ? affiliation : affVal)
+                        .foregroundColor(affVal.isEmpty ? .gray : .black)
                     Spacer()
                     Image(systemName: "chevron.down")
                         .foregroundColor(Color.orange)
@@ -60,14 +49,14 @@ struct questionsPage : View {
         Menu {
             ForEach(identityList, id: \.self){ client in
                 Button(client) {
-                    self.value = client
+                    self.idVal = client
                 }
             }
         } label: {
             VStack(spacing: 5){
                 HStack{
-                    Text(value.isEmpty ? identity : value)
-                        .foregroundColor(value.isEmpty ? .gray : .black)
+                    Text(idVal.isEmpty ? identity : idVal)
+                        .foregroundColor(idVal.isEmpty ? .gray : .black)
                     Spacer()
                     Image(systemName: "chevron.down")
                         .foregroundColor(Color.orange)
@@ -81,16 +70,16 @@ struct questionsPage : View {
         }
         
         Menu {
-            ForEach(typeList, id: \.self){ client in
+            ForEach(resourceList, id: \.self){ client in
                 Button(client) {
-                    self.value = client
+                    self.resVal = client
                 }
             }
         } label: {
             VStack(spacing: 5){
                 HStack{
-                    Text(value.isEmpty ? type : value)
-                        .foregroundColor(value.isEmpty ? .gray : .black)
+                    Text(resVal.isEmpty ? resource : resVal)
+                        .foregroundColor(resVal.isEmpty ? .gray : .black)
                     Spacer()
                     Image(systemName: "chevron.down")
                         .foregroundColor(Color.orange)
@@ -101,6 +90,32 @@ struct questionsPage : View {
                     .fill(Color.orange)
                     .frame(height: 2)
             }
+        }
+        
+        VStack (){
+            Group {
+                Button(action: {
+                    print("Display resources")
+                }, label: {
+                    Text("Get assistance")
+                        .foregroundColor(.white)
+                        .frame(width: 200, height: 40)
+                        .background(Color.blue)
+                        .cornerRadius(15)
+                        .padding()
+                })
+                
+                Button(action: {
+                    self.questions = false
+                }, label: {
+                    Text("Back to Home")
+                        .foregroundColor(.white)
+                        .frame(width: 200, height: 40)
+                        .background(Color.green)
+                        .cornerRadius(15)
+                        .padding()
+                })
+            }.frame(alignment: .bottom)
         }
     }
 }
