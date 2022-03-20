@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A006BD7227E7A8E500877797 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A006BD7127E7A8E500877797 /* WebView.swift */; };
 		A00732B427D1327E00C6B688 /* mapPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00732B327D1327E00C6B688 /* mapPage.swift */; };
 		A00732B627D132B700C6B688 /* questionsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00732B527D132B700C6B688 /* questionsPage.swift */; };
 		A00732B827D132D400C6B688 /* calendarPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00732B727D132D400C6B688 /* calendarPage.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A006BD7127E7A8E500877797 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		A00732B327D1327E00C6B688 /* mapPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapPage.swift; sourceTree = "<group>"; };
 		A00732B527D132B700C6B688 /* questionsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = questionsPage.swift; sourceTree = "<group>"; };
 		A00732B727D132D400C6B688 /* calendarPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calendarPage.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				A00732BB27D1330700C6B688 /* logIn.swift */,
 				A00732B927D132F600C6B688 /* homePage.swift */,
 				A00732B727D132D400C6B688 /* calendarPage.swift */,
+				A006BD7127E7A8E500877797 /* WebView.swift */,
 				A00732B527D132B700C6B688 /* questionsPage.swift */,
 				A00732B327D1327E00C6B688 /* mapPage.swift */,
 				E79EA7D627CDA736009A0F4C /* Assets.xcassets */,
@@ -273,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A00732B827D132D400C6B688 /* calendarPage.swift in Sources */,
+				A006BD7227E7A8E500877797 /* WebView.swift in Sources */,
 				A00732BC27D1330700C6B688 /* logIn.swift in Sources */,
 				E79EA7D527CDA731009A0F4C /* ContentView.swift in Sources */,
 				E79EA7D327CDA731009A0F4C /* KC_PotterApp.swift in Sources */,

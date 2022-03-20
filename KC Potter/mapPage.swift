@@ -12,16 +12,15 @@ struct mapPage : View {
     var body: some View {
         VStack (){
             Button(action: {
-                self.map = false
-            }) {
-                Text("Map Page")
-                    .fontWeight(.semibold)
-                    .font(.title)
-                    .foregroundColor(Color.black)
-                    .frame(minWidth: 0, maxWidth: 380, maxHeight: 100)
-                .background(Color.yellow)
-                .cornerRadius(40)
-            }
+                    self.map = false
+                }, label: {
+                    Text("Back to Home")
+                        .foregroundColor(.white)
+                        .frame(width: 200, height: 40)
+                        .background(Color.green)
+                        .cornerRadius(15)
+                        .padding()
+                })
         
         }
     }
