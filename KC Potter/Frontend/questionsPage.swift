@@ -18,9 +18,7 @@ struct questionsPage : View {
     var identityList = ["Lesbian/Gay", "Bi/Pan/Fluid", "Trans*", "Ally", "Intersex", "Ace/Aro"]
     var resource = "I am looking for ..."
     var resourceList = ["Athletics", "Counseling", "Educational", "Medical/Health", "Religious/Spiritual"]
-    
-    @Binding var questions: Bool
-    var body: some View {
+        var body: some View {
 
         
         Menu {
@@ -106,7 +104,6 @@ struct questionsPage : View {
                 })
                 
                 Button(action: {
-                    self.questions = false
                 }, label: {
                     Text("Back to Home")
                         .foregroundColor(.white)

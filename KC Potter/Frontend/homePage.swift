@@ -9,11 +9,7 @@ import SwiftUI
 
 struct homePage : View {
     
-    @Binding var login: Bool
-    @Binding var calendar: Bool
-    @Binding var questions: Bool
-    @Binding var map: Bool
-    
+    //@Binding var login: Bool
     var body: some View {
         VStack (){
             Text("Welcome")
@@ -32,46 +28,12 @@ struct homePage : View {
                         .resizable()
                         .frame(minWidth: 0, maxWidth: 380, maxHeight: 250)
             
-            Button(action: {
-                self.calendar = true
-            }) {
-                Text("Calendar of Events")
-                    .fontWeight(.semibold)
-                    .font(.title)
-                    .foregroundColor(Color.black)
-                    .frame(minWidth: 0, maxWidth: 380, maxHeight: 101)
-                .background(Color.red)
-                .cornerRadius(40)
-            }
-            .padding(.top, 50.0)
             
             Button(action: {
-                self.questions = true
+                //self.login = false
+                runExample()
             }) {
-                Text("Get Assistance")
-                    .fontWeight(.semibold)
-                    .font(.title)
-                    .foregroundColor(Color.black)
-                    .frame(minWidth: 0, maxWidth: 380, maxHeight: 100)
-                .background(Color.orange)
-                .cornerRadius(40)
-            }
-            
-            Button(action: {
-                self.map = true
-            }) {
-                Text("Find a Gender Neutral Bathroom")
-                    .fontWeight(.semibold)
-                    .font(.title)
-                    .foregroundColor(Color.black)
-                    .frame(minWidth: 0, maxWidth: 380, maxHeight: 100)
-                .background(Color.yellow)
-                .cornerRadius(40)
-            }
-            Button(action: {
-                self.login = false
-            }) {
-                Text("Log Out")
+                Text("DB Test")
                     .fontWeight(.semibold)
                     .font(.title)
                     .foregroundColor(Color.black)
@@ -80,8 +42,12 @@ struct homePage : View {
                 .cornerRadius(40)
             }
             
-            
-            
+            /*
+            Rectangle()
+                .fill(Color.clear)
+                .frame(height: 1)
+                .border(Color.black.opacity(0.1))
+             */
         
         }
     }
