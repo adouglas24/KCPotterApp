@@ -102,16 +102,6 @@ struct questionsPage : View {
                         .cornerRadius(15)
                         .padding()
                 })
-                
-                Button(action: {
-                }, label: {
-                    Text("Back to Home")
-                        .foregroundColor(.white)
-                        .frame(width: 200, height: 40)
-                        .background(Color.green)
-                        .cornerRadius(15)
-                        .padding()
-                })
             }.frame(alignment: .bottom)
         }
     }
