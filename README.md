@@ -10,7 +10,5 @@ Database: We decided to utilize Mongo Realm for our backend database.
 
 
 Packages:
-File -> Add Packages
-
-realm-swift
-[github.com/realm/realm-swift]
+rm KC\ Potter.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved
+File -> Packages -> Reset Package Caches
