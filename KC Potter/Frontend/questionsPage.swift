@@ -20,7 +20,7 @@ struct questionsPage : View {
     var resourceList = ["Athletics", "Counseling", "Educational", "Medical/Health", "Religious/Spiritual"]
         var body: some View {
 
-        
+            VStack{
         Menu {
             ForEach(affiliationList, id: \.self){ client in
                 Button(client) {
@@ -115,4 +115,5 @@ struct questionsPage : View {
             }.frame(alignment: .bottom)
         }
     }
+}
 }
