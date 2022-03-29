@@ -31,7 +31,7 @@ struct navPage: View {
                 }
             
             //This page messes with the design of the navbar for some reason
-            Text("Tab 3")
+            questionsPage()
                 .tabItem {
                     Image(systemName: "questionmark")
                     Text("Resources")

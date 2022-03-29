@@ -29,18 +29,19 @@ struct homePage : View {
                         .frame(minWidth: 0, maxWidth: 380, maxHeight: 250)
             
             
-            Button(action: {
-                //self.login = false
-                runExample()
-            }) {
-                Text("DB Test")
-                    .fontWeight(.semibold)
-                    .font(.title)
-                    .foregroundColor(Color.black)
-                    .frame(minWidth: 0, maxWidth: 380, maxHeight: 100)
-                .background(Color.yellow)
-                .cornerRadius(40)
-            }
+//            Button(action: {
+//                //self.login = false
+//                runExample()
+//            }) {
+//                Text("DB Test")
+//                    .fontWeight(.semibold)
+//                    .font(.title)
+//                    .foregroundColor(Color.black)
+//                    .frame(minWidth: 0, maxWidth: 380, maxHeight: 100)
+//                .background(Color.yellow)
+//                .cornerRadius(40)
+//            }
+            
             
             /*
             Rectangle()
@@ -48,6 +49,17 @@ struct homePage : View {
                 .frame(height: 1)
                 .border(Color.black.opacity(0.1))
              */
+            
+            Text("About the Center")
+                .font(.title3)
+                .fontWeight(.bold)
+                .padding()
+                .frame(maxWidth: 400, alignment: .center)
+            
+            
+            Text("LGBTQI Life, located within the physical structure of the K.C. Potter Center, is a cultural center and a place of affirmation for individuals of all identities, and a resource for information and support about gender and sexuality.")
+                .padding()
+                .frame(maxWidth: 400, alignment: .center)
         
         }
     }
