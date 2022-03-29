@@ -10,5 +10,5 @@ Database: We decided to utilize Mongo Realm for our backend database.
 
 
 Packages:
-rm KC\ Potter.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved
 File -> Packages -> Reset Package Caches
+Do not push: KC\ Potter.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved
