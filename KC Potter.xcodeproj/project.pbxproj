@@ -50,6 +50,7 @@
 		A00732B727D132D400C6B688 /* calendarPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calendarPage.swift; sourceTree = "<group>"; };
 		A00732B927D132F600C6B688 /* homePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homePage.swift; sourceTree = "<group>"; };
 		A00732BB27D1330700C6B688 /* logIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logIn.swift; sourceTree = "<group>"; };
+		A0C5238027F3D4D70079F7D3 /* KC-Potter-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "KC-Potter-Info.plist"; sourceTree = SOURCE_ROOT; };
 		E7510FB227EC30C000218950 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		E766CE3327ED089D00A89809 /* navPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = navPage.swift; sourceTree = "<group>"; };
 		E79EA7CF27CDA731009A0F4C /* KC Potter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KC Potter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,6 +139,7 @@
 		E79EA7D127CDA731009A0F4C /* KC Potter */ = {
 			isa = PBXGroup;
 			children = (
+				A0C5238027F3D4D70079F7D3 /* KC-Potter-Info.plist */,
 				E7510FB527EC30DD00218950 /* Frontend */,
 				E7510FB427EC30CD00218950 /* Backend */,
 				E79EA7D627CDA736009A0F4C /* Assets.xcassets */,
@@ -481,6 +483,8 @@
 				DEVELOPMENT_TEAM = WB628AA5G9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "KC-Potter-Info.plist";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "For Gender Neutral Bathroom Navigation";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -510,6 +514,8 @@
 				DEVELOPMENT_TEAM = WB628AA5G9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "KC-Potter-Info.plist";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "For Gender Neutral Bathroom Navigation";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
