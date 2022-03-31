@@ -48,7 +48,6 @@ struct questionsPage : View {
                         .frame(height: 2)
                 }
             }
-            Spacer()
             
             // LGBTQIA+ identity drop-down
             Menu {
@@ -74,7 +73,6 @@ struct questionsPage : View {
                         .frame(height: 2)
                 }
             }
-            Spacer()
             
             // resource type drop-down
             Menu {
@@ -146,7 +144,6 @@ struct questionsPage : View {
                     Text("Crisis Text Line – Text START to 741-741")
                     Text("Gay, Lesbian, Bisexual, and Transgender National Hoteline – 888.843.4564")
                     Text("GLBT National Youth Talkline – 800.246.7743")
-                    Text("Trans Lifeline – 877.565.8860")
                 }
             }
         }
