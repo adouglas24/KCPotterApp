@@ -50,7 +50,6 @@
 		A00732B727D132D400C6B688 /* calendarPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calendarPage.swift; sourceTree = "<group>"; };
 		A00732B927D132F600C6B688 /* homePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homePage.swift; sourceTree = "<group>"; };
 		A00732BB27D1330700C6B688 /* logIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logIn.swift; sourceTree = "<group>"; };
-		A0C5238027F3D4D70079F7D3 /* KC-Potter-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "KC-Potter-Info.plist"; sourceTree = SOURCE_ROOT; };
 		E7510FB227EC30C000218950 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		E766CE3327ED089D00A89809 /* navPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = navPage.swift; sourceTree = "<group>"; };
 		E79EA7CF27CDA731009A0F4C /* KC Potter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KC Potter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,7 +138,6 @@
 		E79EA7D127CDA731009A0F4C /* KC Potter */ = {
 			isa = PBXGroup;
 			children = (
-				A0C5238027F3D4D70079F7D3 /* KC-Potter-Info.plist */,
 				E7510FB527EC30DD00218950 /* Frontend */,
 				E7510FB427EC30CD00218950 /* Backend */,
 				E79EA7D627CDA736009A0F4C /* Assets.xcassets */,
@@ -477,13 +475,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 0.0;
 				DEVELOPMENT_ASSET_PATHS = "\"KC Potter/Preview Content\"";
 				DEVELOPMENT_TEAM = WB628AA5G9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "KC-Potter-Info.plist";
+				INFOPLIST_FILE = info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "For Gender Neutral Bathroom Navigation";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -494,7 +493,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "danyul.KC-Potter";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -508,13 +507,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 0.0;
 				DEVELOPMENT_ASSET_PATHS = "\"KC Potter/Preview Content\"";
 				DEVELOPMENT_TEAM = WB628AA5G9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "KC-Potter-Info.plist";
+				INFOPLIST_FILE = info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "For Gender Neutral Bathroom Navigation";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -525,7 +525,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "danyul.KC-Potter";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
