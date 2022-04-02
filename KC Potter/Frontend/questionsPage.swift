@@ -39,14 +39,14 @@ struct questionsPage : View {
                             .foregroundColor(affVal.isEmpty ? .gray : .black)
                         Spacer()
                         Image(systemName: "chevron.down")
-                            .foregroundColor(Color.orange)
+                            .foregroundColor(Color.green)
                             .font(Font.system(size: 20, weight: .bold))
                     }
                     .padding(.horizontal)
                     Rectangle()
-                        .fill(Color.orange)
+                        .fill(Color.green)
                         .frame(height: 2)
-                }
+                }.padding()
             }
             
             // LGBTQIA+ identity drop-down
@@ -64,14 +64,14 @@ struct questionsPage : View {
                             .foregroundColor(idVal.isEmpty ? .gray : .black)
                         Spacer()
                         Image(systemName: "chevron.down")
-                            .foregroundColor(Color.orange)
+                            .foregroundColor(Color.blue)
                             .font(Font.system(size: 20, weight: .bold))
                     }
                     .padding(.horizontal)
                     Rectangle()
-                        .fill(Color.orange)
+                        .fill(Color.blue)
                         .frame(height: 2)
-                }
+                }.padding()
             }
             
             // resource type drop-down
@@ -89,14 +89,14 @@ struct questionsPage : View {
                             .foregroundColor(resVal.isEmpty ? .gray : .black)
                         Spacer()
                         Image(systemName: "chevron.down")
-                            .foregroundColor(Color.orange)
+                            .foregroundColor(Color.purple)
                             .font(Font.system(size: 20, weight: .bold))
                     }
                     .padding(.horizontal)
                     Rectangle()
-                        .fill(Color.orange)
+                        .fill(Color.purple)
                         .frame(height: 2)
-                }
+                }.padding()
             }
             
             // buttons
@@ -108,9 +108,9 @@ struct questionsPage : View {
                         input[2]=resVal
                     }, label: {
                         Text("Get assistance")
-                            .foregroundColor(.white)
+                            .foregroundColor(.black)
                             .frame(width: 200, height: 40)
-                            .background(Color.blue)
+                            .background(Color.yellow)
                             .cornerRadius(15)
                             .padding()
                     })

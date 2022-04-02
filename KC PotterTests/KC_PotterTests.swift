@@ -3,7 +3,7 @@
 //  KC PotterTests
 //
 //  Created by Daniel Li on 2/28/22.
-//
+//  Modified by Zifeng Liang on 3/31/22.
 
 import XCTest
 @testable import KC_Potter
@@ -25,7 +25,13 @@ class KC_PotterTests: XCTestCase {
         // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
         // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
     }
-
+    
+    func testQuestionsWorks() {
+        // Arrange: create the necessary dependencies.
+        // Act: call my API, using the dependencies created above.
+        XCTAssertTrue()
+      }
+    
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
         self.measure {

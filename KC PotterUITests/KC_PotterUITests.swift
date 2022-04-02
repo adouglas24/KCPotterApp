@@ -3,7 +3,7 @@
 //  KC PotterUITests
 //
 //  Created by Daniel Li on 2/28/22.
-//
+//  Modified by Zifeng Liang on 3/31/22.
 
 import XCTest
 
@@ -29,6 +29,30 @@ class KC_PotterUITests: XCTestCase {
 
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        app.buttons["LOGIN"].tap()
+        let tabBar = app.tabBars["Tab Bar"]
+        
+        tabBar.buttons["Calendar"].tap()
+        let calendarAttachment = XCTAttachment(screenshot: app.screenshot())
+        calendarAttachment.name = "Calendar Screen"
+        calendarAttachment.lifetime = .keepAlways
+        add(calendarAttachment)
+        
+        tabBar.buttons["Resources"].tap()
+        let resourcesAttachment = XCTAttachment(screenshot: app.screenshot())
+        resourcesAttachment.name = "Resources Screen"
+        resourcesAttachment.lifetime = .keepAlways
+        add(resourcesAttachment)
+        
+        app.buttons["Resource Type:, I am looking for ..."].tap()
+        app.buttons["Get assistance"].tap()
+        
+        tabBar.buttons["Bathroom"].tap()
+        let bathroomAttachment = XCTAttachment(screenshot: app.screenshot())
+        bathroomAttachment.name = "Bathroom Screen"
+        bathroomAttachment.lifetime = .keepAlways
+        add(bathroomAttachment)
     }
 
     func testLaunchPerformance() throws {
