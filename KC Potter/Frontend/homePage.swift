@@ -24,9 +24,11 @@ struct homePage : View {
                 .padding()
                 .frame(maxWidth: 400, alignment: .center)
             
-            Image("flag")
+            Image("square_light")
                         .resizable()
-                        .frame(minWidth: 0, maxWidth: 380, maxHeight: 250)
+                        .frame(minWidth: 0, maxHeight: 380)
+                        .padding(10)
+                        .cornerRadius(10)
             
             
 //            Button(action: {
