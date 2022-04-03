@@ -26,29 +26,61 @@ class KC_PotterUITests: XCTestCase {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
         app.launch()
+        
+        XCTAssertTrue(app.waitForExistence(timeout: 10))
 
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         
-        app.buttons["LOGIN"].tap()
+        let loginButton = app.buttons["LOGIN"]
+        if (loginButton.exists) {
+            loginButton.tap()
+        }
+        
         let tabBar = app.tabBars["Tab Bar"]
         
-        tabBar.buttons["Calendar"].tap()
+        let calendarButton = tabBar.buttons["Calendar"]
+        if (calendarButton.exists) {
+            calendarButton.tap()
+        }
         let calendarAttachment = XCTAttachment(screenshot: app.screenshot())
         calendarAttachment.name = "Calendar Screen"
         calendarAttachment.lifetime = .keepAlways
         add(calendarAttachment)
         
-        tabBar.buttons["Resources"].tap()
+        let resourcesButton = tabBar.buttons["Resources"]
+        if (resourcesButton.exists) {
+            resourcesButton.tap()
+        }
         let resourcesAttachment = XCTAttachment(screenshot: app.screenshot())
         resourcesAttachment.name = "Resources Screen"
         resourcesAttachment.lifetime = .keepAlways
         add(resourcesAttachment)
         
-        app.buttons["Resource Type:, I am looking for ..."].tap()
-        app.buttons["Get assistance"].tap()
+        let affButton = app.buttons["Community Affliation:, I am a ..."]
+        if (affButton.exists) {
+            affButton.tap()
+        }
         
-        tabBar.buttons["Bathroom"].tap()
+        let resButton = app.buttons["Resource Type:, I am looking for ..."]
+        if (resButton.exists) {
+            resButton.tap()
+        }
+        
+        let idButton = app.buttons["LGBTQ+ Identity:, I identify as ..."]
+        if (idButton.exists) {
+            idButton.tap()
+        }
+        
+        let submitButton = app.buttons["Get assistance"]
+        if (submitButton.exists) {
+            submitButton.tap()
+        }
+        
+        let bathroomButton = tabBar.buttons["Bathroom"]
+        if (bathroomButton.exists) {
+            bathroomButton.tap()
+        }
         let bathroomAttachment = XCTAttachment(screenshot: app.screenshot())
         bathroomAttachment.name = "Bathroom Screen"
         bathroomAttachment.lifetime = .keepAlways
