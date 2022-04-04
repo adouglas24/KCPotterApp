@@ -30,7 +30,6 @@ struct navPage: View {
                     Text("Calendar")
                 }
             
-            //This page messes with the design of the navbar for some reason
             questionsPage()
                 .tabItem {
                     Image(systemName: "questionmark")
