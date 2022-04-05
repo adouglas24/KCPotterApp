@@ -31,6 +31,14 @@ class KC_PotterTests: XCTestCase {
         // Act: call my API, using the dependencies created above.
       }
     
+    func testLogIn() {
+        // to do once system is setup
+      }
+    
+    func testDatabase() {
+        // to do 
+      }
+    
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
         self.measure {
