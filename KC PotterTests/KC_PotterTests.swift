@@ -29,7 +29,6 @@ class KC_PotterTests: XCTestCase {
     func testQuestionsWorks() {
         // Arrange: create the necessary dependencies.
         // Act: call my API, using the dependencies created above.
-        XCTAssertTrue()
       }
     
     func testPerformanceExample() throws {

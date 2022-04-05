@@ -22,7 +22,7 @@ let map = MKMapView()
       let region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 36.143221137535406, longitude: -86.80529316615699), span: span)
       map.setRegion(region, animated: true)
 
-      // add points
+      // add points here
       let alumni_hall = MKPointAnnotation()
       alumni_hall.coordinate = CLLocationCoordinate2D(latitude: 36.14796291398134, longitude: -86.80339059928727)
       alumni_hall.title = "Alumni Hall"
