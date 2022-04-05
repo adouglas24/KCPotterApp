@@ -21,71 +21,37 @@ import UIKit
 
 //using starter code from https://www.youtube.com/watch?v=H6pmm62axCg
 
+// code from https://stackoverflow.com/questions/56553527/show-user-location-on-map-swiftui
 
+import SwiftUI
+import CoreLocation
 
+// MARK: View that shows map to users
 struct mapPage: View {
 
+  @State var locationManager = CLLocationManager()
+  @State var showMapAlert = false
+
   var body: some View {
-    VStack {
-      MapView()
-  }
-}
-}
-
-struct MapView: UIViewRepresentable {
-
-  typealias UIViewType = MKMapView
-
-  func makeCoordinator() -> MapViewCoordinator {
-    return MapViewCoordinator()
-  }
-
-  func makeUIView(context: Context) -> MKMapView {
-    let mapView = MKMapView()
-    mapView.delegate = context.coordinator
-
-    let region = MKCoordinateRegion(
-      center: CLLocationCoordinate2D(latitude: 36.147335938307485, longitude: -86.80487060215306),
-      span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
-    mapView.setRegion(region, animated: true)
-
-    // NYC
-    let p1 = MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: 40.71, longitude: -74))
-
-    // Boston
-    let p2 = MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: 42.36, longitude: -71.05))
-      
-
-    let request = MKDirections.Request()
-    request.source = MKMapItem(placemark: p1)
-    request.destination = MKMapItem(placemark: p2)
-    request.transportType = .automobile
-
-    let directions = MKDirections(request: request)
-    directions.calculate { response, error in
-      guard let route = response?.routes.first else { return }
-      mapView.addAnnotations([p1, p2])
-      mapView.addOverlay(route.polyline)
-      mapView.setVisibleMapRect(
-        route.polyline.boundingMapRect,
-        edgePadding: UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20),
-        animated: true)
-    }
-    return mapView
-  }
-
-  func updateUIView(_ uiView: MKMapView, context: Context) {
-  }
-
-  class MapViewCoordinator: NSObject, MKMapViewDelegate {
-    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-      let renderer = MKPolylineRenderer(overlay: overlay)
-      renderer.strokeColor = .systemBlue
-      renderer.lineWidth = 5
-      return renderer
+    MapView(locationManager: $locationManager, showMapAlert: $showMapAlert)
+        .alert(isPresented: $showMapAlert) {
+          Alert(title: Text("Location access denied"),
+                message: Text("Your location is needed"),
+                primaryButton: .cancel(),
+                secondaryButton: .default(Text("Settings"),
+                                          action: { self.goToDeviceSettings() }))
     }
   }
 }
+
+extension mapPage {
+  ///Path to device settings if location is disabled
+  func goToDeviceSettings() {
+    guard let url = URL.init(string: UIApplication.openSettingsURLString) else { return }
+    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+  }
+}
+
 
 
 struct mapPagePreview: PreviewProvider {
