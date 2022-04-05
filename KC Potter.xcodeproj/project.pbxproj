@@ -13,6 +13,7 @@
 		A00732B827D132D400C6B688 /* calendarPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00732B727D132D400C6B688 /* calendarPage.swift */; };
 		A00732BA27D132F600C6B688 /* homePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00732B927D132F600C6B688 /* homePage.swift */; };
 		A00732BC27D1330700C6B688 /* logIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00732BB27D1330700C6B688 /* logIn.swift */; };
+		A0A5CA6D27FB4C28009D2728 /* mapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A5CA6C27FB4C28009D2728 /* mapView.swift */; };
 		E7510FB327EC30C000218950 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7510FB227EC30C000218950 /* Database.swift */; };
 		E7510FB827EC30FC00218950 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = E7510FB727EC30FC00218950 /* Realm */; };
 		E7510FBA27EC30FC00218950 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E7510FB927EC30FC00218950 /* RealmSwift */; };
@@ -50,6 +51,7 @@
 		A00732B727D132D400C6B688 /* calendarPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calendarPage.swift; sourceTree = "<group>"; };
 		A00732B927D132F600C6B688 /* homePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homePage.swift; sourceTree = "<group>"; };
 		A00732BB27D1330700C6B688 /* logIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logIn.swift; sourceTree = "<group>"; };
+		A0A5CA6C27FB4C28009D2728 /* mapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapView.swift; sourceTree = "<group>"; };
 		E7510FB227EC30C000218950 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		E766CE3327ED089D00A89809 /* navPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = navPage.swift; sourceTree = "<group>"; };
 		E79EA7CF27CDA731009A0F4C /* KC Potter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KC Potter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,6 +112,7 @@
 				A006BD7127E7A8E500877797 /* WebView.swift */,
 				A00732B527D132B700C6B688 /* questionsPage.swift */,
 				A00732B327D1327E00C6B688 /* mapPage.swift */,
+				A0A5CA6C27FB4C28009D2728 /* mapView.swift */,
 				E766CE3327ED089D00A89809 /* navPage.swift */,
 			);
 			path = Frontend;
@@ -308,6 +311,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0A5CA6D27FB4C28009D2728 /* mapView.swift in Sources */,
 				E766CE3427ED089D00A89809 /* navPage.swift in Sources */,
 				A00732B827D132D400C6B688 /* calendarPage.swift in Sources */,
 				A006BD7227E7A8E500877797 /* WebView.swift in Sources */,
