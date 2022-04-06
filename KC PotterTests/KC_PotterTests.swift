@@ -36,7 +36,32 @@ class KC_PotterTests: XCTestCase {
       }
     
     func testDatabase() {
-        // to do 
+        
+        let task1 = QsTask()
+        XCTAssertEqual(task1.name, "")
+        XCTAssertEqual(task1.status, "")
+        task1.name = "ann"
+        XCTAssertEqual(task1.name, "ann")
+
+        let task2 = QsTask()
+        task2.name = "something"
+        XCTAssertEqual(task2.name, "something")
+        XCTAssertEqual(task1.status, "")
+
+        let task3 = QsTask(name: "somethingelse", owner: "me", status: "completed")
+        XCTAssertEqual(task3.name, "somethingelse")
+        XCTAssertEqual(task3.owner, "me")
+        XCTAssertEqual(task3.owner, "me")
+
+//        realm.add(task1)
+//        XCTAssertEqual(realm.count,1)
+//        realm.add(task2)
+//        XCTAssertEqual(realm.count,2)
+//        realm.add(task3)
+//        XCTAssertEqual(realm.count,3)
+//
+//        realm.deleteAll()
+//        XCTAssertEqual(realm.count,0)
       }
     
     func testPerformanceExample() throws {
