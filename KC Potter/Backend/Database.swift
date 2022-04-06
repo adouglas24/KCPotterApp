@@ -97,7 +97,7 @@ func onRealmOpened(_ app: App, _ realm: Realm) {
             fatalError("\(error)")
         }
     }
-    
+
     // Delete all from the realm
     try! realm.write {
         realm.deleteAll()
@@ -107,10 +107,39 @@ func onRealmOpened(_ app: App, _ realm: Realm) {
     try! realm.write {
         realm.add(task)
     }
+
+    // Testing
+
+    let task1 = QsTask()
+    XCTAssertEqual(task1.name, "")
+    XCTAssertEqual(task1.status, "")
+    tast1.name = "ann"
+    XCTAssertEqual(task1.name, "ann")
+
+    let task2 = QsTask(name: "something")
+    XCTAssertEqual(task2.name, "something")
+    XCTAssertEqual(task1.status, "")
+
+    let task3 = QsTask(name: "somethingelse", owner: "me", status: "completed")
+    XCTAssertEqual(task3.name, "somethingelse")
+    XCTAssertEqual(task3.owner, "me")
+    XCTAssertEqual(task3.owner, "me")
+
+    realm.add(task1)
+    XCTAssertEqual(realm.count,1)
+    realm.add(task2)
+    XCTAssertEqual(realm.count,2)
+    realm.add(task3)
+    XCTAssertEqual(realm.count,3)
+
+    realm.deleteAll()
+    XCTAssertEqual(realm.count,0)
     
     let taskList = realm.objects(QsTask.self)
     
     print("Task Amount: \(taskList.count)")
+
+    // tasklist count
     
     /*
     let anotherTask = coordinates(name: "App design")
