@@ -49,10 +49,13 @@ class KC_PotterTests: XCTestCase {
         XCTAssertEqual(task1.status, "")
 
         let task3 = QsTask(name: "somethingelse", owner: "me", status: "completed")
+        // can't set owner, an optional field in task initialization
         XCTAssertEqual(task3.name, "somethingelse")
+        task3.owner = "me"
         XCTAssertEqual(task3.owner, "me")
-        XCTAssertEqual(task3.owner, "me")
-
+        XCTAssertEqual(task3.status, "completed")
+        
+//
 //        realm.add(task1)
 //        XCTAssertEqual(realm.count,1)
 //        realm.add(task2)

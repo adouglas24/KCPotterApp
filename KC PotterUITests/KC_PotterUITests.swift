@@ -40,6 +40,16 @@ class KC_PotterUITests: XCTestCase {
         
         let tabBar = app.tabBars["Tab Bar"]
         
+        let homeButton = tabBar.buttons["Home"]
+        XCTAssertTrue(homeButton.exists)
+        if (homeButton.exists) {
+            homeButton.tap()
+        }
+        let homeAttachment = XCTAttachment(screenshot: app.screenshot())
+        homeAttachment.name = "Home Screen"
+        homeAttachment.lifetime = .keepAlways
+        add(homeAttachment)
+        
         let calendarButton = tabBar.buttons["Calendar"]
         XCTAssertTrue(calendarButton.exists)
         if (calendarButton.exists) {
@@ -60,6 +70,16 @@ class KC_PotterUITests: XCTestCase {
         resourcesAttachment.lifetime = .keepAlways
         add(resourcesAttachment)
         
+        let bathroomButton = tabBar.buttons["Bathroom"]
+        XCTAssertTrue(bathroomButton.exists)
+        if (bathroomButton.exists) {
+            bathroomButton.tap()
+        }
+        let bathroomAttachment = XCTAttachment(screenshot: app.screenshot())
+        bathroomAttachment.name = "Bathroom Screen"
+        bathroomAttachment.lifetime = .keepAlways
+        add(bathroomAttachment)
+        
         // flaky tests below
 //        let affButton = app.buttons["Community Affliation:, I am a ..."]
 //        XCTAssertTrue(affButton.exists)
@@ -79,21 +99,33 @@ class KC_PotterUITests: XCTestCase {
 //            idButton.tap()
 //        }
 //
+        
+//        app.buttons["Get assistance"].tap()
+//        app.buttons["Community Affiliation:, I am a ..."].tap()
+        
+        
+//        let app = XCUIApplication()
+//        app.tabBars["Tab Bar"].buttons["Resources"].tap()
+//        app/*@START_MENU_TOKEN@*/.buttons["pickAff"]/*[[".buttons[\"Community Affliation\"]",".buttons[\"pickAff\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        //XCTAssert(app.pickers("pickAff").exists)
+        
+        // app.pickerWheels.element(boundBy: 0).adjust(toPickerWheelValue: "Community")
+        
+        // app.pickers.element(boundBy: 0).swipeUp()
+        // XCTAssert(app.staticTexts["Selected: Black"].exists)
+        
+        
+    
+//        resourceTypeButton.tap()
+//        let medical = app.collectionViews/*@START_MENU_TOKEN@*/.buttons["Medical/Health"]/*[[".cells.buttons[\"Medical\/Health\"]",".buttons[\"Medical\/Health\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+//        XCTAssertTrue(medical.exists)
+                        
+        
 //        let submitButton = app.buttons["Get assistance"]
 //        XCTAssertTrue(submitButton.exists)
 //        if (submitButton.exists) {
 //            submitButton.tap()
 //        }
-        
-        let bathroomButton = tabBar.buttons["Bathroom"]
-        XCTAssertTrue(bathroomButton.exists)
-        if (bathroomButton.exists) {
-            bathroomButton.tap()
-        }
-        let bathroomAttachment = XCTAttachment(screenshot: app.screenshot())
-        bathroomAttachment.name = "Bathroom Screen"
-        bathroomAttachment.lifetime = .keepAlways
-        add(bathroomAttachment)
     }
 
     func testLaunchPerformance() throws {
