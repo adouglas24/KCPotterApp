@@ -25,13 +25,16 @@ class QsTask: Object {
 class coordinates: Object {
     @Persisted(primaryKey: true) var _id: ObjectId
     @Persisted var name: String = ""
-    @Persisted var x: Int32?
-    @Persisted var y: Int32?
-    @Persisted var z: Int32?
+    @Persisted var sub: String
+    @Persisted var lat: Double
+    @Persisted var long: Double
     
-    convenience init(name: String) {
+    convenience init(name: String, sub: String, lat: Double, long: Double) {
         self.init()
         self.name = name
+        self.sub = sub
+        self.lat = lat
+        self.long = long
     }
 }
 
@@ -45,11 +48,12 @@ class questions: Object {
 
 var ourQuestions = questions()
 
+var bathrooms = [coordinates]()
 
 
 
 // Entrypoint. Call this to run the example.
-func runExample() {
+func fetchDatabase() {
     //print(Realm.Configuration.defaultConfiguration.fileURL!)
     // Instantiate the app
     let app = App(id: "kc-potter-mvzlx")
@@ -69,13 +73,12 @@ func runExample() {
     
 }
 
-func onLogin(_ app: App)  {
+func onLogin(_ app: App) {
     let user = app.currentUser!
     let partitionValue = "myPartition"
     
     let configuration = user.configuration(partitionValue: partitionValue)
     
-    var questionsList = questions()
     
     // Open the realm asynchronously to ensure backend data is downloaded first.
     Realm.asyncOpen(configuration: configuration) { (result) in
@@ -87,64 +90,29 @@ func onLogin(_ app: App)  {
         case .success(let realm):
             // Realm opened
             getQuestions(realm)
+            getCoordinates(realm)
+            
         }
     }
-    
-
 }
 
 
 func getQuestions(_ realm: Realm) {
     // Get all tasks in the realm
-    let questions = realm.objects(questions.self)
-    
-    // Retain notificationToken as long as you want to observe
-    /*
-    let notificationToken = questions.observe { (changes) in
-        switch changes {
-        case .initial: break
-            // Results are now populated and can be accessed without blocking the UI
-        case .update(_, let deletions, let insertions, let modifications):
-            // Query results have changed.
-            print("Deleted indices: ", deletions)
-            print("Inserted indices: ", insertions)
-            print("Modified modifications: ", modifications)
-        case .error(let error):
-            // An error occurred while opening the Realm file on the background worker thread
-            fatalError("\(error)")
-        }
-    }
-     */
-    
-    //print("Task Amount: \(tasks.count)")
-    //print("\(questions)")
-    //print("\(questions[0].affilicationList[0])")
-    print("done")
+    let questions = realm.objects(questions.self)    
     ourQuestions = questions[0]
-    print(ourQuestions)
     
-    /*
-    // Delete all from the realm
-    try! realm.write {
-        realm.deleteAll()
-    }
-    // Add some tasks
-    let task = QsTask(name: "Do laundry", owner: "me", status: "not done lol")
-    try! realm.write {
-        realm.add(task)
-    }
+    print("questions populated")
+}
 
-    
-    let taskList = realm.objects(QsTask.self)
-    
-    print("Task Amount: \(taskList.count)")
 
-    // tasklist count
+func getCoordinates(_ realm: Realm) {
+    // Get all tasks in the realm
+    let coords = realm.objects(coordinates.self)
+    bathrooms = Array(coords)
+
+    print("coordinates populated")
     
     
-    let anotherTask = coordinates(name: "App design")
-    try! realm.write {
-        realm.add(anotherTask)
-    }
-     */
+    
 }

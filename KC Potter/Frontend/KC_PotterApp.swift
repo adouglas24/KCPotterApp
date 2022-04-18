@@ -11,7 +11,12 @@ import SwiftUI
 struct KC_PotterApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().onAppear(perform: fetch)
         }
+    }
+    
+    private func fetch() {
+        print("fetching database values")
+        fetchDatabase()
     }
 }

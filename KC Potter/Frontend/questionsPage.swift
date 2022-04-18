@@ -12,6 +12,8 @@ struct questionsPage : View {
     @State var affVal = 0
     @State var idVal = 0
     @State var resVal = 0
+    
+    
 //    var affiliation = "I am a ..."
     var affiliationList = ["I am a ...","Alumni", "Faculty", "Staff", "Student", "Community"]
 //    var identity = "I identify as ..."
