@@ -63,6 +63,12 @@ struct homePage : View {
                 .padding()
                 .frame(maxWidth: 400, alignment: .center)
         
-        }
+        }.onAppear(perform: fetch)
     }
+    
+    private func fetch() {
+        print("fetching")
+        runExample()
+    }
+    
 }

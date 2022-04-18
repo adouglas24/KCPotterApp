@@ -35,13 +35,24 @@ class coordinates: Object {
     }
 }
 
+class questions: Object {
+    @Persisted(primaryKey: true) var _id: ObjectId
+    @Persisted var affilicationList: List<String>
+    @Persisted var identityList: List<String>
+    @Persisted var resourceList: List<String>
+}
+
+
+var ourQuestions = questions()
+
+
+
 
 // Entrypoint. Call this to run the example.
 func runExample() {
     //print(Realm.Configuration.defaultConfiguration.fileURL!)
     // Instantiate the app
     let app = App(id: "kc-potter-mvzlx")
-
     // Log in anonymously. [will be email/pass soon]
     let anonymousCredentials = Credentials.anonymous
     app.login(credentials: anonymousCredentials) { (result) in
@@ -50,40 +61,46 @@ func runExample() {
             print("Login failed: \(error.localizedDescription)")
         case .success(let user):
             print("Successfully logged in as user \(user)")
-            // Now logged in, do something with user
-            // Remember to dispatch to main if you are doing anything on the UI thread
             onLogin(app)
+            
         }
     }
     
     
 }
 
-func onLogin(_ app: App) {
+func onLogin(_ app: App)  {
     let user = app.currentUser!
     let partitionValue = "myPartition"
     
     let configuration = user.configuration(partitionValue: partitionValue)
     
+    var questionsList = questions()
+    
     // Open the realm asynchronously to ensure backend data is downloaded first.
     Realm.asyncOpen(configuration: configuration) { (result) in
+        print(result)
         switch result {
         case .failure(let error):
             print("Failed to open realm: \(error.localizedDescription)")
             // Handle error...
         case .success(let realm):
             // Realm opened
-            onRealmOpened(app, realm)
+            getQuestions(realm)
         }
     }
+    
 
 }
 
-func onRealmOpened(_ app: App, _ realm: Realm) {
+
+func getQuestions(_ realm: Realm) {
     // Get all tasks in the realm
-    let tasks = realm.objects(QsTask.self)
+    let questions = realm.objects(questions.self)
+    
     // Retain notificationToken as long as you want to observe
-    let notificationToken = tasks.observe { (changes) in
+    /*
+    let notificationToken = questions.observe { (changes) in
         switch changes {
         case .initial: break
             // Results are now populated and can be accessed without blocking the UI
@@ -97,7 +114,16 @@ func onRealmOpened(_ app: App, _ realm: Realm) {
             fatalError("\(error)")
         }
     }
-
+     */
+    
+    //print("Task Amount: \(tasks.count)")
+    //print("\(questions)")
+    //print("\(questions[0].affilicationList[0])")
+    print("done")
+    ourQuestions = questions[0]
+    print(ourQuestions)
+    
+    /*
     // Delete all from the realm
     try! realm.write {
         realm.deleteAll()
@@ -115,13 +141,10 @@ func onRealmOpened(_ app: App, _ realm: Realm) {
 
     // tasklist count
     
-    /*
+    
     let anotherTask = coordinates(name: "App design")
     try! realm.write {
         realm.add(anotherTask)
     }
      */
-
-
-    print("done")
 }
