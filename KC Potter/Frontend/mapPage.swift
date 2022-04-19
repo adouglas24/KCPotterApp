@@ -28,28 +28,28 @@ import CoreLocation
 
 // MARK: View that shows map to users
 struct mapPage: View {
-
-  @State var locationManager = CLLocationManager()
-  @State var showMapAlert = false
-
-  var body: some View {
-    MapView(locationManager: $locationManager, showMapAlert: $showMapAlert)
-        .alert(isPresented: $showMapAlert) {
-          Alert(title: Text("Location access denied"),
-                message: Text("Your location is needed"),
-                primaryButton: .cancel(),
-                secondaryButton: .default(Text("Settings"),
-                                          action: { self.goToDeviceSettings() }))
+    
+    @State var locationManager = CLLocationManager()
+    @State var showMapAlert = false
+    
+    var body: some View {
+        MapView(locationManager: $locationManager, showMapAlert: $showMapAlert)
+            .alert(isPresented: $showMapAlert) {
+                Alert(title: Text("Location access denied"),
+                      message: Text("Your location is needed"),
+                      primaryButton: .cancel(),
+                      secondaryButton: .default(Text("Settings"),
+                                                action: { self.goToDeviceSettings() }))
+            }
     }
-  }
 }
 
 extension mapPage {
-  ///Path to device settings if location is disabled
-  func goToDeviceSettings() {
-    guard let url = URL.init(string: UIApplication.openSettingsURLString) else { return }
-    UIApplication.shared.open(url, options: [:], completionHandler: nil)
-  }
+    ///Path to device settings if location is disabled
+    func goToDeviceSettings() {
+        guard let url = URL.init(string: UIApplication.openSettingsURLString) else { return }
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    }
 }
 
 
@@ -58,6 +58,6 @@ struct mapPagePreview: PreviewProvider {
     static var previews: some View {
         Group {
             mapPage()
-          }
+        }
     }
 }

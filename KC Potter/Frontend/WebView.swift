@@ -18,8 +18,8 @@ struct SwiftUIWebView : UIViewRepresentable {
         let config = WKWebViewConfiguration()
         config.defaultWebpagePreferences = prefs
         return WKWebView(
-        frame: .zero,
-        configuration: config
+            frame: .zero,
+            configuration: config
         )
     }
     

@@ -5,13 +5,6 @@
 //  Created by Daniel Li on 3/24/22.
 //
 
-//
-//  ContentView.swift
-//  Stijy
-//
-//  Created by Daniel Li on 3/24/22.
-//
-
 import SwiftUI
 
 struct navPage: View {
@@ -19,10 +12,10 @@ struct navPage: View {
     var body: some View {
         TabView {
             homePage()
-            .tabItem {
-                Image(systemName: "house")
-                Text("Home")
-            }
+                .tabItem {
+                    Image(systemName: "house")
+                    Text("Home")
+                }
             
             calendarPage()
                 .tabItem {

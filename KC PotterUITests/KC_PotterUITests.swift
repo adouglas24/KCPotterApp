@@ -8,27 +8,27 @@
 import XCTest
 
 class KC_PotterUITests: XCTestCase {
-
+    
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
-
+        
         // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
-
+        
         // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
-
+    
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
+    
     func testExample() throws {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
         app.launch()
         
         XCTAssertTrue(app.waitForExistence(timeout: 10))
-
+        
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         
@@ -81,32 +81,32 @@ class KC_PotterUITests: XCTestCase {
         add(bathroomAttachment)
         
         // flaky tests below
-//        let affButton = app.buttons["Community Affliation:, I am a ..."]
-//        XCTAssertTrue(affButton.exists)
-//        if (affButton.exists) {
-//            affButton.tap()
-//        }
-//
-//        let resButton = app.buttons["Resource Type:, I am looking for ..."]
-//        XCTAssertTrue(resButton.exists)
-//        if (resButton.exists) {
-//            resButton.tap()
-//        }
-//
-//        let idButton = app.buttons["LGBTQ+ Identity:, I identify as ..."]
-//        XCTAssertTrue(idButton.exists)
-//        if (idButton.exists) {
-//            idButton.tap()
-//        }
-//
+        //        let affButton = app.buttons["Community Affliation:, I am a ..."]
+        //        XCTAssertTrue(affButton.exists)
+        //        if (affButton.exists) {
+        //            affButton.tap()
+        //        }
+        //
+        //        let resButton = app.buttons["Resource Type:, I am looking for ..."]
+        //        XCTAssertTrue(resButton.exists)
+        //        if (resButton.exists) {
+        //            resButton.tap()
+        //        }
+        //
+        //        let idButton = app.buttons["LGBTQ+ Identity:, I identify as ..."]
+        //        XCTAssertTrue(idButton.exists)
+        //        if (idButton.exists) {
+        //            idButton.tap()
+        //        }
+        //
         
-//        app.buttons["Get assistance"].tap()
-//        app.buttons["Community Affiliation:, I am a ..."].tap()
+        //        app.buttons["Get assistance"].tap()
+        //        app.buttons["Community Affiliation:, I am a ..."].tap()
         
         
-//        let app = XCUIApplication()
-//        app.tabBars["Tab Bar"].buttons["Resources"].tap()
-//        app/*@START_MENU_TOKEN@*/.buttons["pickAff"]/*[[".buttons[\"Community Affliation\"]",".buttons[\"pickAff\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        //        let app = XCUIApplication()
+        //        app.tabBars["Tab Bar"].buttons["Resources"].tap()
+        //        app/*@START_MENU_TOKEN@*/.buttons["pickAff"]/*[[".buttons[\"Community Affliation\"]",".buttons[\"pickAff\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         //XCTAssert(app.pickers("pickAff").exists)
         
         // app.pickerWheels.element(boundBy: 0).adjust(toPickerWheelValue: "Community")
@@ -115,19 +115,19 @@ class KC_PotterUITests: XCTestCase {
         // XCTAssert(app.staticTexts["Selected: Black"].exists)
         
         
-    
-//        resourceTypeButton.tap()
-//        let medical = app.collectionViews/*@START_MENU_TOKEN@*/.buttons["Medical/Health"]/*[[".cells.buttons[\"Medical\/Health\"]",".buttons[\"Medical\/Health\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-//        XCTAssertTrue(medical.exists)
-                        
         
-//        let submitButton = app.buttons["Get assistance"]
-//        XCTAssertTrue(submitButton.exists)
-//        if (submitButton.exists) {
-//            submitButton.tap()
-//        }
+        //        resourceTypeButton.tap()
+        //        let medical = app.collectionViews/*@START_MENU_TOKEN@*/.buttons["Medical/Health"]/*[[".cells.buttons[\"Medical\/Health\"]",".buttons[\"Medical\/Health\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        //        XCTAssertTrue(medical.exists)
+        
+        
+        //        let submitButton = app.buttons["Get assistance"]
+        //        XCTAssertTrue(submitButton.exists)
+        //        if (submitButton.exists) {
+        //            submitButton.tap()
+        //        }
     }
-
+    
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
             // This measures how long it takes to launch your application.

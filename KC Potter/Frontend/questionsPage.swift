@@ -14,98 +14,98 @@ struct questionsPage : View {
     @State var resVal = 0
     
     
-//    var affiliation = "I am a ..."
+    //    var affiliation = "I am a ..."
     var affiliationList = ["I am a ...","Alumni", "Faculty", "Staff", "Student", "Community"]
-//    var identity = "I identify as ..."
+    //    var identity = "I identify as ..."
     var identityList = ["I identify as ...", "Lesbian/Gay", "Bi/Pan/Fluid", "Trans*", "Ally", "Intersex", "Ace/Aro"]
-//    var resource = "I am looking for ..."
+    //    var resource = "I am looking for ..."
     var resourceList = ["I am looking for ...", "Athletics", "Counseling", "Crisis", "Educational", "Medical/Health", "Religious/Spiritual"]
     
-//    @State var input = ["I am a ...", "I identify as ...", "I am looking for ..."]
+    //    @State var input = ["I am a ...", "I identify as ...", "I am looking for ..."]
     @State var input = ["","",""]
     
     
-//    enum Affiliation: String, CaseIterable, Identifiable {
-//        case alumni, faculty, staff, student, community, empty
-//        var id: Self { self }
-//    }
-//
-//    @State private var selectedAff: Affiliation = .empty
-
-
+    //    enum Affiliation: String, CaseIterable, Identifiable {
+    //        case alumni, faculty, staff, student, community, empty
+    //        var id: Self { self }
+    //    }
+    //
+    //    @State private var selectedAff: Affiliation = .empty
+    
+    
     var body: some View {
         VStack {
             // make selections
             //Section {
-                Picker("Community Affliation", selection: $affVal) {
-                    ForEach(0 ..< affiliationList.count) {
-                        Text(self.affiliationList[$0])
-                    }
-                }.accessibility(identifier:"pickAff")
+            Picker("Community Affliation", selection: $affVal) {
+                ForEach(0 ..< affiliationList.count) {
+                    Text(self.affiliationList[$0])
+                }
+            }.accessibility(identifier:"pickAff")
             //}
             
             //Section {
-                Picker("LGBTQ+ Identity", selection: $idVal) {
-                    ForEach(0 ..< identityList.count) {
-                        Text(self.identityList[$0])
-                    }
-                }.accessibility(identifier:"pickId")
+            Picker("LGBTQ+ Identity", selection: $idVal) {
+                ForEach(0 ..< identityList.count) {
+                    Text(self.identityList[$0])
+                }
+            }.accessibility(identifier:"pickId")
             //}
             
             //Section {
-                Picker("Resource Type", selection: $resVal) {
-                    ForEach(0 ..< resourceList.count) {
-                        Text(self.resourceList[$0])
-                    }
-                }.accessibility(identifier:"pickRes")
+            Picker("Resource Type", selection: $resVal) {
+                ForEach(0 ..< resourceList.count) {
+                    Text(self.resourceList[$0])
+                }
+            }.accessibility(identifier:"pickRes")
             //}
-        
-
-//
             
-//            Button(action: {
-//                login = true
-//            }) {
-//                Text("LOGIN")
-//                    .fontWeight(.semibold)
-//                    .font(.title)
-//                    .foregroundColor(Color.black)
-//                    .frame(minWidth: 0, maxWidth: 380, maxHeight: 100)
-//                .background(Color.yellow)
-//                .cornerRadius(40)
-//            }
+            
+            //
+            
+            //            Button(action: {
+            //                login = true
+            //            }) {
+            //                Text("LOGIN")
+            //                    .fontWeight(.semibold)
+            //                    .font(.title)
+            //                    .foregroundColor(Color.black)
+            //                    .frame(minWidth: 0, maxWidth: 380, maxHeight: 100)
+            //                .background(Color.yellow)
+            //                .cornerRadius(40)
+            //            }
             // buttons
             VStack (){
                 //Group {
-                    Button(action: {
-                        input[0] = affiliationList[affVal]
-                        input[1] = identityList[idVal]
-                        input[2] = resourceList[resVal]
-                    }) {
-                        Text("Get assistance")
-                            .foregroundColor(.black)
-                            .frame(width: 200, height: 40)
-                            .background(Color.yellow)
-                            .cornerRadius(15)
-                            .padding()
-                    }
+                Button(action: {
+                    input[0] = affiliationList[affVal]
+                    input[1] = identityList[idVal]
+                    input[2] = resourceList[resVal]
+                }) {
+                    Text("Get assistance")
+                        .foregroundColor(.black)
+                        .frame(width: 200, height: 40)
+                        .background(Color.yellow)
+                        .cornerRadius(15)
+                        .padding()
+                }
                 //}.frame(alignment: .bottom)
             }
-//
-//            let queryFilter: Document = ["name": "Americano"]
-//            collection.find(filter: queryFilter) { result in
-//                switch result {
-//                case .failure(let error):
-//                    print("Call to MongoDB failed: \(error.localizedDescription)")
-//                    return
-//                case .success(let documents):
-//                    print("Results: ")
-//                    for document in documents {
-//                        print("Coffee drink: \(document)")
-//                    }
-//                }
-//            }
-    
+            //
+            //            let queryFilter: Document = ["name": "Americano"]
+            //            collection.find(filter: queryFilter) { result in
+            //                switch result {
+            //                case .failure(let error):
+            //                    print("Call to MongoDB failed: \(error.localizedDescription)")
+            //                    return
+            //                case .success(let documents):
+            //                    print("Results: ")
+            //                    for document in documents {
+            //                        print("Coffee drink: \(document)")
+            //                    }
+            //                }
+            //            }
+            
             
             // display resources
             VStack {
@@ -226,8 +226,8 @@ struct questionsPage : View {
         //            }
         //}
         
-
         
-
+        
+        
     }
 }

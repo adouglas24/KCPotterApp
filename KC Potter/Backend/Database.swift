@@ -13,7 +13,7 @@ class QsTask: Object {
     @Persisted var name: String = ""
     @Persisted var owner: String?
     @Persisted var status: String = ""
-
+    
     convenience init(name: String, owner: String, status: String) {
         self.init()
         self.name = name
@@ -99,7 +99,7 @@ func onLogin(_ app: App) {
 
 func getQuestions(_ realm: Realm) {
     // Get all tasks in the realm
-    let questions = realm.objects(questions.self)    
+    let questions = realm.objects(questions.self)
     ourQuestions = questions[0]
     
     print("questions populated")
@@ -110,7 +110,7 @@ func getCoordinates(_ realm: Realm) {
     // Get all tasks in the realm
     let coords = realm.objects(coordinates.self)
     bathrooms = Array(coords)
-
+    
     print("coordinates populated")
     
     
