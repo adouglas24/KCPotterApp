@@ -34,13 +34,9 @@ struct homePage : View {
                 .padding()
                 .frame(maxWidth: 400, alignment: .center)
             
-            
             Text("LGBTQI Life, located within the physical structure of the K.C. Potter Center, is a cultural center and a place of affirmation for individuals of all identities, and a resource for information and support about gender and sexuality.")
                 .padding()
                 .frame(maxWidth: 400, alignment: .center)
-            
         }
     }
-    
-    
 }

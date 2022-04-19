@@ -38,6 +38,7 @@ class coordinates: Object {
     }
 }
 
+
 class questions: Object {
     @Persisted(primaryKey: true) var _id: ObjectId
     @Persisted var affilicationList: List<String>
@@ -47,9 +48,7 @@ class questions: Object {
 
 
 var ourQuestions = questions()
-
 var bathrooms = [coordinates]()
-
 
 
 // Entrypoint. Call this to run the example.
@@ -73,6 +72,7 @@ func fetchDatabase() {
     
 }
 
+
 func onLogin(_ app: App) {
     let user = app.currentUser!
     let partitionValue = "myPartition"
@@ -91,7 +91,6 @@ func onLogin(_ app: App) {
             // Realm opened
             getQuestions(realm)
             getCoordinates(realm)
-            
         }
     }
 }
@@ -112,7 +111,4 @@ func getCoordinates(_ realm: Realm) {
     bathrooms = Array(coords)
     
     print("coordinates populated")
-    
-    
-    
 }
